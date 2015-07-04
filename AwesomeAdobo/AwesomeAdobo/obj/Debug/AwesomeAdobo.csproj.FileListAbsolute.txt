@@ -1,0 +1,11 @@
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\bin\Debug\AwesomeAdobo.exe.config
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\bin\Debug\AwesomeAdobo.exe
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\bin\Debug\AwesomeAdobo.pdb
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\AwesomeAdobo.csprojResolveAssemblyReference.cache
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\AwesomeAdobo.Form1.resources
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\AwesomeAdobo.Properties.Resources.resources
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\AwesomeAdobo.csproj.GenerateResource.Cache
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\AwesomeAdobo.exe
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\AwesomeAdobo.pdb
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\bin\Debug\MySql.Data.dll
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\AwesomeAdobo.frmConfig.resources
