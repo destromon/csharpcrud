@@ -15,6 +15,26 @@ namespace AwesomeAdobo
         //instantiate model
         Adobo adobo = new Adobo();
 
+        List<Adobo> adobos = new List<Adobo>();
+        public void Edit(int id)
+        {
+            //set object properties
+            adobo.Id = id;
+
+            //clear list
+            adobos.Clear();
+
+            //get the data using the supplied attributes
+            adobos = adobo.GetById();
+
+            textBox1.Text = adobos[0].Color;
+            textBox2.Text = adobos[0].Taste;
+            textBox3.Text = adobos[0].Lapotness;
+            textBox4.Text = adobos[0].TypeOfMeat;
+
+            //change the caption of the button save
+            button1.Text = "Update";
+        }
         public Form1()
         {
             InitializeComponent();
@@ -28,7 +48,14 @@ namespace AwesomeAdobo
             adobo.Lapotness = textBox3.Text;
             adobo.TypeOfMeat = textBox4.Text;
 
-            adobo.Save();
+            if (button1.Text == "Save")
+            {
+                adobo.Save();
+            }
+            else
+            {
+                adobo.Update();
+            }
 
         }
 
@@ -36,6 +63,11 @@ namespace AwesomeAdobo
         {
             frmConfig frmConfig = new frmConfig();
             frmConfig.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

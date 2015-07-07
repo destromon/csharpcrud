@@ -19,6 +19,8 @@ namespace AwesomeAdobo
         protected string lapotness;
         protected string typeOfMeat;
 
+        protected List<Adobo> adobos = new List<Adobo>();
+
         /**********************************************
          * Private Properties
          * ********************************************/
@@ -100,6 +102,162 @@ namespace AwesomeAdobo
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("New adobo recipe has been added.");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+
+        public List<Adobo> Read()
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(AwesomeAdobo.Config.GetConnectionString()))
+                {
+                    //open connection
+                    con.Open();
+
+                    //set query string
+                    string sql = "SELECT * FROM adobo WHERE active = 1";
+
+                    //prepare command
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    //execute query
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Adobo adobo = new Adobo();
+
+                        adobo.id = int.Parse(reader["id"].ToString());
+                        adobo.color = reader["adobo_color"].ToString();
+                        adobo.taste = reader["adobo_taste"].ToString();
+                        adobo.lapotness = reader["adobo_lapotness"].ToString();
+                        adobo.typeOfMeat = reader["adobo_type_of_meat"].ToString();
+
+                        adobos.Add(adobo);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return adobos;
+        }
+
+        /// <summary>
+        /// Get the selected id from the database.
+        /// </summary>
+        /// <returns>List</returns>
+        public List<Adobo> GetById()
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(AwesomeAdobo.Config.GetConnectionString()))
+                {
+                    //open connection
+                    con.Open();
+
+                    //set query string
+                    string sql = "SELECT * FROM adobo WHERE id = @id";
+
+                    //prepare command
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    //set parameters
+                    cmd.Parameters.AddWithValue("id", id);
+
+                    //execute query
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Adobo adobo = new Adobo();
+
+                        adobo.id = int.Parse(reader["id"].ToString());
+                        adobo.color = reader["adobo_color"].ToString();
+                        adobo.taste = reader["adobo_taste"].ToString();
+                        adobo.lapotness = reader["adobo_lapotness"].ToString();
+                        adobo.typeOfMeat = reader["adobo_type_of_meat"].ToString();
+
+                        adobos.Add(adobo);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return adobos;
+        }
+
+        public void Update()
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(AwesomeAdobo.Config.GetConnectionString()))
+                {
+                    //open connection
+                    con.Open();
+
+                    //set query string
+                    string sql = "UPDATE adobo SET adobo_color = @color, " +
+                        "adobo_taste = @taste, " +
+                        "adobo_lapotness = @lapotness, " +
+                        "adobo_type_of_meat = @typeOfMeat " +
+                        "WHERE id = @id";
+
+                    //prepare command
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    //set parameters
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("color", color);
+                    cmd.Parameters.AddWithValue("taste", taste);
+                    cmd.Parameters.AddWithValue("lapotness", lapotness);
+                    cmd.Parameters.AddWithValue("typeOfMeat", typeOfMeat);
+
+                    //execute query
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Uy, naupdate :)", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void Delete()
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(AwesomeAdobo.Config.GetConnectionString()))
+                {
+                    //open connection
+                    con.Open();
+
+                    //set query string
+                    string sql = "UPDATE adobo SET active = 0 WHERE id = @id";
+
+                    //prepare command
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    //set parameters
+                    cmd.Parameters.AddWithValue("id", id);
+
+                    //execute query
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Uy, nadelete :)", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (MySqlException ex)

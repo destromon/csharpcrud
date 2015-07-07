@@ -9,3 +9,4 @@ C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\A
 C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\AwesomeAdobo.pdb
 C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\bin\Debug\MySql.Data.dll
 C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\AwesomeAdobo.frmConfig.resources
+C:\Users\destromon-L\Desktop\Awesome Adobo\AwesomeAdobo\AwesomeAdobo\obj\Debug\AwesomeAdobo.Form2.resources
